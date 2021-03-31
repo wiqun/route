@@ -3,10 +3,10 @@ package broker
 import (
 	"bytes"
 	"github.com/gorilla/websocket"
+	"github.com/wiqun/route/internal/config"
+	"github.com/wiqun/route/internal/log"
+	"github.com/wiqun/route/internal/message"
 	"io"
-	"route/internal/config"
-	"route/internal/log"
-	"route/internal/message"
 	"time"
 )
 

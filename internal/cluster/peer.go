@@ -2,7 +2,7 @@ package cluster
 
 import (
 	"github.com/weaveworks/mesh"
-	"route/internal/message"
+	"github.com/wiqun/route/internal/message"
 )
 
 type Peer struct {

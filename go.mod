@@ -1,4 +1,4 @@
-module route
+module github.com/wiqun/route
 
 go 1.14
 

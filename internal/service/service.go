@@ -2,10 +2,10 @@ package service
 
 import (
 	"context"
-	"route/internal/common"
-	"route/internal/config"
-	. "route/internal/log"
-	"route/internal/message"
+	"github.com/wiqun/route/internal/common"
+	"github.com/wiqun/route/internal/config"
+	. "github.com/wiqun/route/internal/log"
+	"github.com/wiqun/route/internal/message"
 	"runtime"
 	"sync"
 )

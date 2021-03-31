@@ -2,12 +2,12 @@ package app
 
 import (
 	"context"
-	"route/internal/broker"
-	"route/internal/cluster"
-	"route/internal/common"
-	"route/internal/config"
-	"route/internal/log"
-	"route/internal/service"
+	"github.com/wiqun/route/internal/broker"
+	"github.com/wiqun/route/internal/cluster"
+	"github.com/wiqun/route/internal/common"
+	"github.com/wiqun/route/internal/config"
+	"github.com/wiqun/route/internal/log"
+	"github.com/wiqun/route/internal/service"
 	"sync"
 )
 

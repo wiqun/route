@@ -3,10 +3,10 @@ package service
 import (
 	"context"
 	"github.com/stretchr/testify/assert"
+	"github.com/wiqun/route/internal/config"
+	"github.com/wiqun/route/internal/log"
+	"github.com/wiqun/route/internal/message"
 	"math/rand"
-	"route/internal/config"
-	"route/internal/log"
-	"route/internal/message"
 	"strconv"
 	"sync"
 	"testing"

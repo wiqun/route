@@ -2,7 +2,7 @@ package message
 
 import (
 	"fmt"
-	"route/internal/config"
+	"github.com/wiqun/route/internal/config"
 	"runtime"
 )
 

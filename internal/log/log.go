@@ -3,9 +3,9 @@ package log
 import (
 	"errors"
 	"fmt"
+	"github.com/wiqun/route/internal/config"
 	"log"
 	"os"
-	"route/internal/config"
 )
 
 type LogFactoryer interface {

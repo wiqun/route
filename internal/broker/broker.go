@@ -3,14 +3,14 @@ package broker
 import (
 	"context"
 	"github.com/gorilla/websocket"
+	"github.com/wiqun/route/internal/cluster"
+	"github.com/wiqun/route/internal/common"
+	"github.com/wiqun/route/internal/config"
+	"github.com/wiqun/route/internal/generate"
+	"github.com/wiqun/route/internal/log"
+	"github.com/wiqun/route/internal/message"
 	"net/http"
 	"net/http/pprof"
-	"route/internal/cluster"
-	"route/internal/common"
-	"route/internal/config"
-	"route/internal/generate"
-	"route/internal/log"
-	"route/internal/message"
 	"sync"
 )
 
