@@ -1,0 +1,12 @@
+broker:
+  listenAddr: :4001
+  clusterSnapshot: true
+cluster:
+  listenAddr: :4002
+  gcInterval: 10s
+  delTimeExpired: 10h
+  nodeName: 00:00:00:00:00:02
+  seed: ["192.168.0.64"]
+
+
+logLevel: Debug

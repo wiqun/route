@@ -1,0 +1,17 @@
+broker:
+  listenAddr: wdwdds
+chan:
+  localPubMessageChanSize: 12
+  queryRequestChanSize: 12
+  remotePubMessageChanSize: 12
+  remoteSubscribeChanSize: 12
+  remoteUnsubscribeChanSize: 12
+  subscribeChanSize: 23
+  unsubscribeChanSize: 12
+cluster:
+  gossipCheckInterval: 22s
+  gossipInterval: 23s
+  listenAddr: wdada
+  nodeName: wwd
+  seed: [1,2,3,4,]
+logLevel: wdwad

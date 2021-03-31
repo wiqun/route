@@ -1,0 +1,17 @@
+#broker:
+#  listenAddr: :4000
+#chan:
+#  localPubMessageChanSize: 1000
+#  queryRequestChanSize: 1000
+#  remotePubMessageChanSize: 1000
+#  remoteSubscribeChanSize: 1000
+#  remoteUnsubscribeChanSize: 1000
+#  subscribeChanSize: 1000
+#  unsubscribeChanSize: 1000
+#cluster:
+#  gossipCheckInterval: 1m
+#  gossipInterval: 10s
+#  listenAddr: :4001
+#  nodeName: 00:00:00:00:00:01
+#  seed: ["example.com"]
+#logLevel: Debug

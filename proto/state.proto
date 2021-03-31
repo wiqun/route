@@ -1,0 +1,11 @@
+syntax = "proto3";
+package crdt;
+
+
+message State {
+    map<uint64, TopicMap> set = 1;
+}
+
+message TopicMap {
+    map<string, int64> map= 1;
+}

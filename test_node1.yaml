@@ -1,0 +1,15 @@
+broker:
+  clusterSnapshot: true
+  listenAddr: :5000
+chan:
+  localPubMessageChanCoreSize: 10000
+cluster:
+  nodeName: 00:00:00:00:00:01
+#  seed: ["192.168.0.67"]
+
+
+logLevel: Information
+
+
+
+
