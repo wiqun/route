@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: route
-          image: route
+          image: routeio/route:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 4001

@@ -33,6 +33,7 @@ type swarm struct {
 	remoteReceiver message.RemoteMsgChanReceiver
 	config         *config.ClusterConfig
 	localIpv4      string //不含端口
+	peers          map[string]struct{}
 }
 
 func NewSwarm(logFactoryer LogFactoryer, config *config.ClusterConfig, localNotifier message.LocalMsgNotifier, remoteReceiver message.RemoteMsgChanReceiver) Swarm {
@@ -70,6 +71,7 @@ func NewSwarm(logFactoryer LogFactoryer, config *config.ClusterConfig, localNoti
 		remoteReceiver: remoteReceiver,
 		config:         config,
 		localIpv4:      localIpv4,
+		peers:          map[string]struct{}{},
 	}
 
 	router, err := mesh.NewRouter(mesh.Config{
@@ -263,6 +265,27 @@ func (s *swarm) join(peers ...string) []error {
 	if len(errs) != 0 {
 		s.log.PrintfError("join 调用InitiateConnections错误: %v", errs)
 	}
+
+	newPeers := map[string]struct{}{}
+	for _, addr := range addrs {
+		newPeers[addr] = struct{}{}
+	}
+
+	var delPeers []string
+	for peer := range s.peers {
+		_, found := newPeers[peer]
+		if !found {
+			delPeers = append(delPeers, peer)
+		}
+	}
+
+	s.peers = newPeers
+	if len(delPeers) != 0 {
+		//当addrs记录减少时需要忘记已存在的连接
+		s.log.PrintfDebug("忘记Peer: %v", delPeers)
+		s.router.ConnectionMaker.ForgetConnections(delPeers)
+	}
+
 	return errs
 }
 
