@@ -27,6 +27,7 @@ type BrokerConfig struct {
 	//4000
 	ListenAddr string `yaml:"listenAddr"`
 
+	///写入超时时间
 	WriteTimeout time.Duration `yaml:"writeTimeout"`
 
 	//是否启用pprof
@@ -40,10 +41,12 @@ type BrokerConfig struct {
 }
 
 type ServiceConfig struct {
-	//每个核心分配的io线程数,默认为1
+	//每个核心分配的io线程数
+	//默认为1
 	IOGoCoroutineCoreNums int `yaml:"ioGoCoroutineCoreNums"`
 
 	//内部io管道的大小
+	//默认为2000
 	IOChanSize int `yaml:"ioGoCoroutineNums"`
 }
 
@@ -61,15 +64,19 @@ type ClusterConfig struct {
 	ListenAddr string `yaml:"listenAddr"`
 
 	//gossip回调的间隔
+	//默认为30s
 	GossipInterval time.Duration `yaml:"gossipInterval"`
 
 	//Crdt状态回收检查间隔
+	//默认为1h
 	GcInterval time.Duration `yaml:"gcInterval"`
 
 	//检查其他节点是否需要连接的间隔
+	//默认为15s
 	GossipCheckInterval time.Duration `yaml:"gossipCheckInterval"`
 
 	//delTime的过期时长
+	//默认为1d
 	DelTimeExpired time.Duration `yaml:"delTimeExpired"`
 
 	//初始的集群地址
