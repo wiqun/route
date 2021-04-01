@@ -19,7 +19,7 @@ $ go run main.go
 $ docker run -d --name route -p 4000:4000 --restart=unless-stopped routeio/route
 ```
 #### k8s部署集群
-集群将会默认暴露出30400端口用于访问,如果不需要此端口则需要自行修改k8s.yaml文件
+集群将会默认暴露出30400端口用于访问,如果不需要此端口则需要自行修改[k8s.yaml](k8s.yaml)文件
 ```
 $ kubectl.exe apply -f .\k8s.yaml
 ```
