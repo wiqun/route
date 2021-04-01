@@ -117,14 +117,17 @@ $ go run main.go -e route_broker_listenAddr=:4002 -e route_logLevel=Debug
 
 - Intel(R) Xeon(R) X5650
 - cpu限制为1核
+- 打压机与被打压机处于不同网段(数据传输需要经过网关)  
 - 每条连接定时发布一条消息到对应的主题并且持续压测10分钟
 
-|  连接数(等同于订阅数)   | TPS | CPU使用率  | 平均耗时  |
+|  连接数(等同于订阅数)   | TPS | CPU使用率  | 平均耗时(受网关的性能影响)  |
 |  ----  | ----  |----  |----  |
 | 3000  | 1W1+ | 60~70% | 100ms+ |
 | 10000  | 1W+ | 70+% | 300ms+ |
 
 如果切换为批量操作的模式,性能将会显著提升。
+
+这里CPU使用率不能达到100%可能是由于网关的的处理速度达不到要求导致的。
 
 压测例子请见: [route-go](https://github.com/wiqun/route-go/tree/master/example/pressure_test)
 
